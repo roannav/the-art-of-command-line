@@ -1,6 +1,6 @@
-# The Art of Command Line
+* just my version of these notes *
+# The Art of Command Line (specifically Bash in Linux)
 
-- [Meta](#meta)
 - [Basics](#basics)
 - [Everyday use](#everyday-use)
 - [Processing files and data](#processing-files-and-data)
@@ -11,16 +11,8 @@
 - [Sources and License](#sources-and-license)
 
 
-## Meta
+WHY:  Every tip is essential in some situation or significantly saves time over alternatives.
 
-Scope:
-
-Every tip is essential in some situation or significantly saves time over alternatives.
-This is Bash for Linux.
-
-Notes:
-
-- To keep this to one page, content is implicitly included by reference. You're smart enough to look up more detail elsewhere once you know the idea or command to Google. Use `apt`, `yum`, `dnf`, `pacman`, `pip` or `brew` (as appropriate) to install new programs.
 - Use [Explainshell](http://explainshell.com/) to get a helpful breakdown of what commands, options, pipes etc. do.
 
 
@@ -28,12 +20,12 @@ Notes:
 
 - Learn basic Bash. Actually, type `man bash` and at least skim the whole thing; it's pretty easy to follow and not that long. Alternate shells can be nice, but Bash is powerful and always available (learning *only* zsh, fish, etc., while tempting on your own laptop, restricts you in many situations, such as using existing servers).
 
-- Learn at least one text-based editor well. The `nano` editor is one of the simplest for basic editing (opening, editing, saving, searching). However, for the power user in a text terminal, there is no substitute for Vim (`vi`), the hard-to-learn but venerable, fast, and full-featured editor. Many people also use the classic Emacs, particularly for larger editing tasks. (Of course, any modern software developer working on an extensive project is unlikely to use only a pure text-based editor and should also be familiar with modern graphical IDEs and tools.)
+- Learn at least one text-based editor (nano, Emacs, Vim). Of course, any modern software developer working on an extensive project is unlikely to use only a pure text-based editor and should also be familiar with modern graphical IDEs and tools.
 
 - Finding documentation:
   - Know how to read official documentation with `man` (for the inquisitive, `man man` lists the section numbers, e.g. 1 is "regular" commands, 5 is files/conventions, and 8 are for administration). Find man pages with `apropos`.
   - Know that some commands are not executables, but Bash builtins, and that you can get help on them with `help` and `help -d`. You can find out whether a command is an executable, shell builtin or an alias by using `type command`.
-  - `curl cheat.sh/command` will give a brief "cheat sheet" with common examples of how to use a shell command.
+  - `curl cheat.sh/command`: cheat sheet with common use examples.
 
 - Learn about redirection of output and input using `>` and `<` and pipes using `|`. Know `>` overwrites the output file and `>>` appends. Learn about stdout and stderr.
 
@@ -47,11 +39,9 @@ Notes:
 
 - Basic network management: `ip` or `ifconfig`, `dig`, `traceroute`, `route`.
 
-- Learn and use a version control management system, such as `git`.
-
 - Know regular expressions well, and the various flags to `grep`/`egrep`. The `-i`, `-o`, `-v`, `-A`, `-B`, and `-C` options are worth knowing.
 
-- Learn to use `apt-get`, `yum`, `dnf` or `pacman` (depending on distro) to find and install packages. And make sure you have `pip` to install Python-based command-line tools (a few below are easiest to install via `pip`).
+- Learn to use `apt-get`, `yum`, `dnf` or `pacman` (depending on distro) or `brew` for Mac to find and install packages. And make sure you have `pip` to install Python-based command-line tools (a few below are easiest to install via `pip`).
 
 
 ## Everyday use
@@ -183,7 +173,7 @@ EOF
 
 - Know about the [128K limit](https://wiki.debian.org/CommonErrorMessages/ArgumentListTooLong) on command lines. This "Argument list too long" error is common when wildcard matching large numbers of files. (When this happens alternatives like `find` and `xargs` may help.)
 
-- For a basic calculator (and of course access to Python in general), use the `python` interpreter. For example,
+- For a basic calculator, use the `python` interpreter. For example,
 ```
 >>> 2+3
 5
