@@ -1,4 +1,4 @@
-* just my version of these notes *
+*just my version of these notes*
 # The Art of Command Line (specifically Bash in Linux)
 
 - [Basics](#basics)
